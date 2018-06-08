@@ -77,7 +77,7 @@ Help with preparing the key and certificate files for connection can be found in
 
 #### Connecting through an HTTP proxy
 
-If you need to connect through an HTTP proxy, you simply need to provide the `proxy: {host, port, auth}` option (with auth being optional) when creating the provider. For example:
+If you need to connect through an HTTP proxy, you simply need to provide the `proxy: {host, port, username, password}` option (with username and password being optional) when creating the provider. For example:
 
 ```javascript
 var options = {
@@ -89,7 +89,8 @@ var options = {
   proxy: {
     host: "192.168.10.92",
     port: 8080,
-    auth: "user:password"
+    username: "proxyuser",
+    password: "proxypassword"
   },
   production: false
 };
