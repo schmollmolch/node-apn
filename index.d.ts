@@ -54,6 +54,16 @@ export interface ProviderOptions {
    * The maximum number of connection failures that will be tolerated before `apn` will "terminate". (Defaults to: 3)
    */
   connectionRetryLimit?: number;
+
+  /**
+   * HTTP Proxy configuration, if required. Basic authentication is optionally supported with 'user:password'
+   */
+  proxy?: {
+    host: string,
+    port: number,
+    username?: string,
+    password?: string
+  },
 }
 
 interface ApsAlert {

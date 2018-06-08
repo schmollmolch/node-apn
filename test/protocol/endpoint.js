@@ -177,7 +177,7 @@ describe("Endpoint", function () {
         endpointOptions = {
           address: "localtest", 
           port: 443,
-          proxy: {host: "proxyaddress", port: 8080}
+          proxy: {host: "proxyaddress", port: 8080, username: "user", password: "$ecret"}
         };
 
         fakeHttpRequest = new EventEmitter();
@@ -192,6 +192,7 @@ describe("Endpoint", function () {
             method: "CONNECT",
             headers: { Connection: "Keep-Alive" },
             path: "localtest:443",
+            auth: "user:$ecret"
           }))
           .returns(fakeHttpRequest);
       });
